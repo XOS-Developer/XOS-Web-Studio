@@ -1,0 +1,55 @@
+{
+  "name": "XOS-Web-Studio",
+  "version": "1.0.0",
+  "description": "Advanced website creation studio",
+
+  "main": "main.js",
+
+  "scripts": {
+    "start": "node server.js",
+    "electron": "electron .",
+    "build": "electron-builder"
+  },
+
+  "author": {
+    "name": "XOS-Developer",
+    "url": "https://github.com/XOS-Developer"
+  },
+
+  "build": {
+    "appId": "com.xos.webstudio",
+    "productName": "XOS-Web Studio",
+
+    "files": [
+      "**/*"
+    ],
+
+    "win": {
+      "target": [
+        {
+          "target": "msi",
+          "arch": [
+            "x64",
+            "ia32",
+            "arm64"
+          ]
+        }
+      ],
+
+      "icon": "public/src/icons/logo.ico"
+    },
+
+    "msi": {
+      "oneClick": false,
+      "perMachine": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "XOS-Web Studio"
+    }
+  },
+
+  "devDependencies": {
+    "electron": "^32.3.3",
+    "electron-builder": "^26.0.0"
+  }
+}
